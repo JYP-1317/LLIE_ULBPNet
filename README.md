@@ -32,9 +32,6 @@ If you find the project useful, please cite:
 ```
 
 
-### Pretrined Model
-
-
 ### Testing
 
 
