@@ -11,7 +11,7 @@ The network architecture primarily comprises a series of lightening blocks and a
 If you find the project useful, please cite:
 
 ```
-@inproceedings{xu2022snr,
+@article{jun2023ulbpnet,
   title={ULBPNet: Low-light image enhancement using U-shaped lightening back-projection},
   author={Jun Young Park, Cheol Woo Park, and Il Kyu Eom},
   journal={Knowledge-Based Systems},
