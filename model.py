@@ -76,7 +76,6 @@ class DLN(nn.Module):
     def __init__(self, input_dim=3, dim=64):
         super(DLN, self).__init__()
         inNet_dim = input_dim + 3
-        # Stage 1
 
         self.conv_o = torch.nn.Conv2d(input_dim, 3, kernel_size=3, stride=1, padding='same')
         self.conv_s = torch.nn.Conv2d(1, 3, kernel_size=3, stride=1, padding='same')
@@ -103,7 +102,6 @@ class DLN(nn.Module):
 
         self.pool3 = nn.MaxPool2d(kernel_size=2)
 
-        # Expansive path
         self.unpool3 = upsample(input_size=256, output_size=128,
                                 kernel_size=2, stride=2, padding=0)
 
@@ -124,7 +122,6 @@ class DLN(nn.Module):
 
         self.out = nn.Conv2d(in_channels=64, out_channels=3, kernel_size=1)
 
-        # STAGE 2
         self.se_os2 = SELayer(channel=3, reduction=1)
         self.se_sh2 = SELayer(channel=3, reduction=1)
 
@@ -146,7 +143,6 @@ class DLN(nn.Module):
 
         self.pool2_3 = nn.MaxPool2d(kernel_size=2)
 
-        # Expansive path
         self.unpool2_3 = upsample(input_size=256, output_size=128,
                                   kernel_size=2, stride=2, padding=0)
 
@@ -206,7 +202,6 @@ class DLN(nn.Module):
         x_sc = self.conv_s(x_s)
         x_hc = self.conv_h(x_h)
 
-        # STAGE 1
         weight_os = x_oric * x_sc
         weight_sh = x_sc * x_hc
 
@@ -248,8 +243,6 @@ class DLN(nn.Module):
 
         NO_feature6 = self.no(feature5)
         Stage_1_out = self.out(NO_feature6)
-
-        # STAGE 2
 
         weight_os2 = x_oric * x_sc
         weight_sh2 = x_sc * Stage_1_out
@@ -301,9 +294,7 @@ class DLN(nn.Module):
 
         return pred
 
-###########################################################################################################
-# scaling part
-###########################################################################################################
+
 
 class MSBlock(torch.nn.Module):
     def __init__(self, input_size, output_size, kernel_size):
@@ -363,9 +354,6 @@ class NoiseBlock(torch.nn.Module):
         return out
 
 
-###########################################################################################################
-# Stretching part
-###########################################################################################################
 
 class MASEblock(nn.Module):
     def __init__(self, in_channels, r=16):
@@ -457,10 +445,6 @@ class weASB(nn.Module):
 
         return x
 
-
-############################################################################################
-# Base models
-############################################################################################
 
 class ConvBlock(torch.nn.Module):
     def __init__(self, input_size, output_size, kernel_size, stride, padding, bias=True, isuseBN=False):
@@ -582,9 +566,6 @@ class SELayer(nn.Module):
         y = self.fc(y).view(b, c, 1, 1)
         return x * y.expand_as(x)
 
-############################################################################################
-# origin ASBANB
-############################################################################################
 class ASAN(torch.nn.Module):
     def __init__(self, input_size, output_size, kernel_size):
         super(ASAN, self).__init__()
