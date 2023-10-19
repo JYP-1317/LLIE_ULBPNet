@@ -28,7 +28,7 @@ parser.add_argument('--gpus', default=1, type=int, help='number of gpu')
 parser.add_argument('--image_dataset', type=str, default='test_img')
 parser.add_argument('--model_type', type=str, default='DLN')
 parser.add_argument('--output', default='./output/', help='Location to save checkpoint models')
-parser.add_argument('--modelfile', default='models/DLN_5913.pth', help='sr pretrained base model')
+parser.add_argument('--modelfile', default='models/DLN_pretrained.pth', help='sr pretrained base model')
 parser.add_argument('--image_based', type=bool, default=True, help='use image or video based ULN')
 parser.add_argument('--chop', type=bool, default=False)
 
