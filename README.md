@@ -20,3 +20,24 @@ If you find the project useful, please cite:
   year={2023}
 }
 ```
+
+### Network Architecture
+
+
+### Installation
+- Python 3.5
+- NVIDIA GPU + CUDA
+- [optional] [sacred+ mongodb (experiment control)](https://pypi.org/project/sacred/) 
+
+### Dataset
+
+
+### Pretrined Model
+
+
+### Testing
+
+
+### Training
+
+
