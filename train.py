@@ -136,7 +136,7 @@ def main(opt, _run):
     # first use the synthesis data (from VOC 2007) to train the model, then use the LOL real data to fine tune
     print('===> Prepare training data')
     #train_set = get_Low_light_training_set(upscale_factor=1, patch_size=opt.patch_size, data_augmentation=True)
-    train_set = get_training_set("datasets/TotalLOL/train", 1, opt.patch_size, True) #uncomment it to do the fine tuning
+    train_set = get_training_set("datasets/TotalLOL/train", 1, opt.patch_size, True) 
     training_data_loader = DataLoader(dataset=train_set, num_workers=opt.threads, batch_size=opt.batchSize,
                                       pin_memory=True, shuffle=True, drop_last=True)
     # =============================#
@@ -146,7 +146,7 @@ def main(opt, _run):
 
     lighten = DLN(input_dim=3, dim=64)
     lighten = torch.nn.DataParallel(lighten)
-    #lighten.load_state_dict(torch.load('models/DLN_.pth', map_location=lambda storage, loc: storage), strict=True)
+    #lighten.load_state_dict(torch.load('models/DLN_pretrained.pth', map_location=lambda storage, loc: storage), strict=True)
     print('---------- Networks architecture -------------')
     print_network(lighten)
 
