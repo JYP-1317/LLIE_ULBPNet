@@ -25,9 +25,12 @@ If you find the project useful, please cite:
 
 
 ### Installation
-- Python 3.9
-- NVIDIA GPU(3088Ti) + CUDA
-  pytorch 1.10.1  cudatoolkit 11.3.1
+- NVIDIA GPU(RTX3080Ti)
+- python 3.9
+- pytorch 1.10.1
+- cudatoolkit 11.3
+
+
 ### Dataset
 
 
