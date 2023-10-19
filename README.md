@@ -22,7 +22,7 @@ If you find the project useful, please cite:
 ```
 
 ### Network Architecture
-
+<img src="figures/architecture.png">
 
 ### Installation
 - NVIDIA GPU(RTX3080Ti)
