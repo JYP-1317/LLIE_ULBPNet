@@ -25,10 +25,9 @@ If you find the project useful, please cite:
 
 
 ### Installation
-- Python 3.5
-- NVIDIA GPU + CUDA
-- [optional] [sacred+ mongodb (experiment control)](https://pypi.org/project/sacred/) 
-
+- Python 3.9
+- NVIDIA GPU(3088Ti) + CUDA
+  pytorch 1.10.1  cudatoolkit 11.3.1
 ### Dataset
 
 
