@@ -27,13 +27,12 @@ If you find the project useful, please cite:
 ### Installation
 - NVIDIA GPU(RTX3080Ti)
 
-
-'''
+```
 - python 3.9
 - pytorch 1.10.1
 - cudatoolkit 11.3
 - pip install pillow, opencv-python, scikit-image, sacred, pymongo
-'''
+```
 
 
 ### Dataset
