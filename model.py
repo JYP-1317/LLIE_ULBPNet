@@ -197,7 +197,6 @@ class DLN(nn.Module):
         x_h = torchvision.transforms.functional.equalize(xh)
         x_h = (x_h / 255).type('torch.cuda.FloatTensor')
 
-
         x_oric = self.conv_o(x_ori)
         x_sc = self.conv_s(x_s)
         x_hc = self.conv_h(x_h)
@@ -295,7 +294,6 @@ class DLN(nn.Module):
         return pred
 
 
-
 class MSBlock(torch.nn.Module):
     def __init__(self, input_size, output_size, kernel_size):
         super(MSBlock, self).__init__()
@@ -352,7 +350,6 @@ class NoiseBlock(torch.nn.Module):
         out = torch.tanh(out3)
 
         return out
-
 
 
 class MASEblock(nn.Module):
