@@ -210,8 +210,8 @@ class DLN(nn.Module):
         weight_os = self.conv_wos(weight_os)
         weight_sh = self.conv_wsh(weight_sh)
 
-        os_feature = x_oric + weight_os
-        sh_feature = x_hc + weight_sh
+        os_feature = x_ori + weight_os
+        sh_feature = x_h + weight_sh
 
         x_in = torch.cat((os_feature, sh_feature), 1)
 
@@ -252,7 +252,7 @@ class DLN(nn.Module):
         weight_os2 = self.conv_wos2(weight_os2)
         weight_sh2 = self.conv_wsh2(weight_sh2)
 
-        os_feature2 = x_oric + weight_os2
+        os_feature2 = x_ori + weight_os2
         sh_feature2 = Stage_1_out + weight_sh2
 
         x_in2 = torch.cat((os_feature2, sh_feature2), 1)
